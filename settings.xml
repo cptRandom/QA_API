@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d65bdeee-1f58-4965-ae82-85ee5f108c0b" created="3.1.0" activeEnvironment="LDB-DVB" name="APILearning" resourceRoot="" defaultScriptLanguage="Groovy" compositeProjectFormat="1.3" updated="3.1.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d65bdeee-1f58-4965-ae82-85ee5f108c0bfileName">APILearning</con:setting>
+  </con:settings>
+  <con:properties>
+    <con:property>
+      <con:name>idDevice</con:name>
+    </con:property>
+  </con:properties>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:environment id="13a42ac1-5d2f-408a-a0fe-649d024157c5" name="LDB-DVB">
+    <con:service type="REST" name="be-java-a1">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://10.34.30.28:8080</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>idDevice</con:name>
+      <con:value>5e4a6508b5e3a219746238cc</con:value>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="94c10165-a98f-41a8-aa6b-8f4227f60ea1" name="LDB-ST0">
+    <con:service type="REST" name="be-java-a1">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">http://10.32.30.24:8080</con:endpoint>
+    </con:service>
+    <con:property>
+      <con:name>idDevice</con:name>
+      <con:value/>
+    </con:property>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:authRepository/>
+  <con:environmentSpec>
+    <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+  <con:tags/>
+</con:soapui-project>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="Devices" path="/be-device/api/device/devices" id="b4b3b7ed-43bd-431d-99dc-8aea5aaac86f" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b4b3b7ed-43bd-431d-99dc-8aea5aaac86ffileName">Devices</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:resource name="{idDevice}" path="{idDevice}" id="9dbe9f52-b501-40a9-a51f-3d7a021892e6">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>idDevice</con:name>
+        <con:value>idDevice</con:value>
+        <con:style>TEMPLATE</con:style>
+        <con:default>idDevice</con:default>
+      </con:parameter>
+    </con:parameters>
+    <con:method name="GET" id="519ebdff-4b1c-4384-9fc4-176a5e417f40" method="GET">
+      <con:settings/>
+      <con:parameters/>
+      <con:representation type="RESPONSE">
+        <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+        <con:status>200</con:status>
+        <con:params/>
+        <con:element xmlns:e4a8="http://10.34.30.28/be-device/api/device/devices/5e4a8239b5e3a219746238cd">e4a8:Response</con:element>
+      </con:representation>
+      <con:request name="GetDeviceID" id="9ef2bc72-faf2-45bf-b5fd-7da5d8f31ec0" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>http://10.34.30.28/be-device/api/device/devices/5e4a8239b5e3a219746238cd</con:originalUri>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="idDevice" value="5e4a8239b5e3a219746238cd"/>
+        </con:parameters>
+      </con:request>
+    </con:method>
+    <con:method name="PATCH" id="f31bbf28-ddd9-4895-928e-d7ca0830f269" method="PATCH">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Patch device" id="5e3eac59-dc5f-494d-840a-821a24f353af" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+    <con:method name="DELETE" id="e45b48aa-c7d9-4e2d-b3ba-2c991ddee55a" method="DELETE">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Delete device" id="9bf40f73-dc93-49ea-8b53-6b47157422ee" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:resource name="!list" path="!list" id="9aa83a49-7337-45ae-904d-f60326cede47">
+    <con:settings/>
+    <con:parameters/>
+    <con:method name="Method 1" id="4086bda6-13dd-4745-ac42-4875a8d7ad9d" method="POST">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="e8a13b07-4fde-476d-b05b-f07ee9474ba6" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="POST" id="0f42ac8d-4f9f-4be1-9736-445bfb011303" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+      <con:status>400 406</con:status>
+      <con:params/>
+      <con:element xmlns:dev="http://10.34.30.28/be-device/api/device/devices">dev:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html;charset=utf-8</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+      <con:status>201</con:status>
+      <con:params/>
+      <con:element xmlns:dev="http://10.34.30.28/be-device/api/device/devices">dev:Response</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:status>0</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
+    <con:request name="DeviceCreateRequest" id="6a4e5da7-8d84-4aa1-8c79-1d5ac4b4c53f" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://10.34.30.28:8080</con:endpoint>
+      <con:request>{
+  "os": {
+    "type": "IOS",
+    "version": "17"
+  },
+  "name": "name",
+  "identification": "12345622789",
+  "idCif": "123456789",
+  "pushNotificationId": "",
+  "mobileApplication": {
+    "version": "9999"
+  }
+}</con:request>
+      <con:originalUri>http://10.34.30.28/be-device/api/device/devices</con:originalUri>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="f9cae604-5d71-4454-91e1-a606cfcbfdaf" wadlVersion="http://wadl.dev.java.net/2009/02" name="be-java-a1" type="rest" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings>
+    <con:setting id="f9cae604-5d71-4454-91e1-a606cfcbfdaffileName">be-java-a1</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>http://10.34.30.28:8080</con:endpoint>
+  </con:endpoints>
+  <con:environmentSpec>
+    <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:interface>

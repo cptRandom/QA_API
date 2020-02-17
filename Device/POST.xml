@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="6c882875-ea9f-4538-9ee3-e2d4aac1b897" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="POST" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6c882875-ea9f-4538-9ee3-e2d4aac1b897fileName">POST</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="DeviceCreateRequest" id="7bc34a12-8174-497f-81ec-1965fb3a8bc6">
+    <con:settings/>
+    <con:config service="be-java-a1" resourcePath="/be-device/api/device/devices" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="DeviceCreateRequest" id="6a4e5da7-8d84-4aa1-8c79-1d5ac4b4c53f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://10.34.30.28:8080</con:endpoint>
+        <con:request>{
+  "os": {
+    "type": "IOS",
+    "version": "17"
+  },
+  "name": "name",
+  "identification": "12345674589",
+  "idCif": "123456789",
+  "pushNotificationId": "",
+  "mobileApplication": {
+    "version": "9999"
+  }
+}</con:request>
+        <con:originalUri>http://10.34.30.28/be-device/api/device/devices</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8940f7eb-6f26-41c5-8196-61f844ff3a10" name="201">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Simple Contains" id="d1344127-ee69-4e83-84fb-f27346d98c04" name="idCif">
+          <con:configuration>
+            <token>idCif</token>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ef1a064f-6a5e-426e-b7d7-34fa0f9c98ab" name="JSONPath Match">
+          <con:configuration>
+            <path>$.mobileApplication.version</path>
+            <content>9999</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="value of ID device to Project" id="9dab21bb-f0cc-4ccc-bae7-5ba09a4dba53">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>idDevice</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>DeviceCreateRequest</con:sourceStep>
+        <con:sourcePath>$['idDevice']</con:sourcePath>
+        <con:targetType>idDevice</con:targetType>
+        <con:targetStep>#Project#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="empty parameter" id="43fffe01-4214-4ec0-8862-c829f8c6f7af">
+    <con:settings/>
+    <con:config service="be-java-a1" resourcePath="/be-device/api/device/devices" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="empty parameter" id="6a4e5da7-8d84-4aa1-8c79-1d5ac4b4c53f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://10.34.30.28:8080</con:endpoint>
+        <con:request>{
+  "os": {
+    "type": "IOS",
+    "version": "17"
+  },
+  "name": "name",
+  "identification": "",
+  "idCif": "123456789",
+  "pushNotificationId": "",
+  "mobileApplication": {
+    "version": "9999"
+  }
+}</con:request>
+        <con:originalUri>http://10.34.30.28/be-device/api/device/devices</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="770de46d-1d58-4aa5-9281-4b9ba7788bb7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ae9f1ab2-6e2b-4304-973f-1010a7956d3e" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="empty cifID" id="1c05ddef-3348-4298-a3b1-a0dfbd9a1986">
+    <con:settings/>
+    <con:config service="be-java-a1" resourcePath="/be-device/api/device/devices" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="empty cifID" id="6a4e5da7-8d84-4aa1-8c79-1d5ac4b4c53f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://10.34.30.28:8080</con:endpoint>
+        <con:request>{
+  "os": {
+    "type": "IOS",
+    "version": "17"
+  },
+  "name": "name",
+  "identification": "547838291",
+  "idCif": "",
+  "pushNotificationId": "",
+  "mobileApplication": {
+    "version": "9999"
+  }
+}</con:request>
+        <con:originalUri>http://10.34.30.28/be-device/api/device/devices</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="770de46d-1d58-4aa5-9281-4b9ba7788bb7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ae9f1ab2-6e2b-4304-973f-1010a7956d3e" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="empty name" id="aa44abd5-2fde-4803-8a64-b2eb32e12006">
+    <con:settings/>
+    <con:config service="be-java-a1" resourcePath="/be-device/api/device/devices" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="empty name" id="6a4e5da7-8d84-4aa1-8c79-1d5ac4b4c53f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://10.34.30.28:8080</con:endpoint>
+        <con:request>{
+  "os": {
+    "type": "IOS",
+    "version": "17"
+  },
+  "name": null,
+  "identification": "9182736045",
+  "idCif": "123456789",
+  "pushNotificationId": "",
+  "mobileApplication": {
+    "version": "9999"
+  }
+}</con:request>
+        <con:originalUri>http://10.34.30.28/be-device/api/device/devices</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="770de46d-1d58-4aa5-9281-4b9ba7788bb7" name="400">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6282ba5e-2eea-402f-b962-99d81800034c" name="error_name_empty">
+          <con:configuration>
+            <path>$.errors</path>
+            <content>[
+   {
+      "code" : "Object.Empty",
+      "attributeName" : "name"
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f87b1d8d-3992-4ca8-b5a0-d755979ed28a" name="attribute name: name">
+          <con:configuration>
+            <path>$.errors.[0].attributeName</path>
+            <content>"name"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="13a42ac1-5d2f-408a-a0fe-649d024157c5">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="94c10165-a98f-41a8-aa6b-8f4227f60ea1">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>9dab21bb-f0cc-4ccc-bae7-5ba09a4dba53</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>
