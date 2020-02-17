@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="f9cae604-5d71-4454-91e1-a606cfcbfdaf" wadlVersion="http://wadl.dev.java.net/2009/02" name="be-java-a1" type="rest" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:interface xsi:type="con:RestService" id="f9cae604-5d71-4454-91e1-a606cfcbfdaf" wadlVersion="http://wadl.dev.java.net/2009/02" name="be-java-a1" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="f9cae604-5d71-4454-91e1-a606cfcbfdaffileName">be-java-a1</con:setting>
   </con:settings>

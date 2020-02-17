@@ -1,3 +1,6 @@
 be-java-a1\Devices.xml
 Device\POST.xml
 Device\GET.xml
+Device\TestCase-1.xml
+Device\TestCase-2.xml
+TestSuite-1\TestCase-19.xml
